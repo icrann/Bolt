@@ -1,2 +1,1 @@
-# Bolt
-Roblox Framework
+<h1>Bolt</h1>
