@@ -1,6 +1,9 @@
 local Bolt = {}
 
-Bolt.Version = "21.0.12"
+local players = game:GetService("Players")
+local marketplace = game:GetService("MarketplaceService")
+
+Bolt.Version = "21.0.13"
 Bolt.VersionDetails = "Bolt 21.0.12: Added Bolt.ChangeLeaderstat for changing leaderstats easily in the game."
 
 
@@ -27,6 +30,10 @@ end
 function Bolt.ChangeLeaderstat(player, name, value)
 	local stat = player:WaitForChild("leaderstats"):WaitForChild(name)
 	stat.Value = value
+end
+
+function Bolt.PromptPremium(player)
+	marketplace:PromptPremiumPurchase(player)
 end
 
 
