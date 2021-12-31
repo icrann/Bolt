@@ -1,6 +1,6 @@
 local Bolt = {}
 
-Bolt.Version = "1.0.0"
+Bolt.Version = "22.0.0"
 Bolt.VersionDetails = "nil"
 
 
