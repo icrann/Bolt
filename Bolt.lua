@@ -100,7 +100,7 @@ function Bolt.Shoot(player, origin, mousePos, damage, distance)
 	end
 end
 
-function Bolt.Run(player, speed)
+function Bolt.ChangeSpeed(player, speed)
 	player.Character:WaitForChild("Humanoid").WalkSpeed = speed
 end
 
