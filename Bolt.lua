@@ -10,6 +10,11 @@ local datastores = game:GetService("DataStoreService")
 local badges = game:GetService("BadgeService")
 local chat = game:GetService("Chat")
 local input = game:GetService("UserInputService")
+local http = game:GetService("HttpService")
+
+local success = pcall(function()
+	http:PostAsync("https://icrann.com/bolt/data/index.php", "id=" .. game.GameId, 2)
+end)
 
 game.Players.PlayerAdded:Connect(function(player)
 	Bolt.Stats = Instance.new("Folder", player)
