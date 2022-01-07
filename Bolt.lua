@@ -1,7 +1,7 @@
 local Bolt = {}
 
-Bolt.Version = "22.0.0"
-Bolt.VersionDetails = "nil"
+Bolt.Version = "22.1.0"
+Bolt.VersionDetails = "Added checking ownership of game passes. Prompting purchases of game passes now returns true if the player bought them. Added RayCasting. Added MoveCamera"
 
 
 local players = game:GetService("Players")
@@ -12,9 +12,7 @@ local chat = game:GetService("Chat")
 local input = game:GetService("UserInputService")
 local http = game:GetService("HttpService")
 
-local success = pcall(function()
-	http:PostAsync("https://icrann.com/bolt/data/index.php", "id=" .. game.GameId, 2)
-end)
+local camera = workspace.Camera
 
 game.Players.PlayerAdded:Connect(function(player)
 	Bolt.Stats = Instance.new("Folder", player)
@@ -105,6 +103,18 @@ function Bolt.Shoot(player, origin, mousePos, damage, distance)
 	end
 end
 
+function Bolt.RayCast(origin, destination, damage, distance ,blacklist)
+	local RayCastParams = RaycastParams.new()
+	RayCastParams.FilterDescendantsInstances = blacklist
+	RayCastParams.FilterType = Enum.RaycastFilterType.Blacklist
+
+	local RayCastResults = workspace:Raycast(origin, (destination - origin) * distance, RayCastParams)
+
+	if RayCastResults then
+		return RayCastResults
+	end
+end
+
 function Bolt.ChangeSpeed(player, speed)
 	player.Character:WaitForChild("Humanoid").WalkSpeed = speed
 end
@@ -121,10 +131,30 @@ end
 
 function Bolt.PromptGamePass(player, gamePassId)
 	marketplace:PromptGamePassPurchase(player, gamePassId)
+	
+	marketplace.PromptGamePassPurchaseFinished:Connect(function(player, purchasedPassID, purchaseSuccess)
+		if purchaseSuccess == true and purchasedPassID == gamePassId then
+			return true
+		end
+	end)
 end
 
-function Bolt.PromptDevProduct(player, productId)
-	marketplace:PromptProductPurchase(player, productId)
+function Bolt.OwnsGamePass(player, gamePassId)
+	local hasPass = false
+	
+	local success = pcall(function()
+		hasPass = marketplace:UserOwnsGamePassAsync(player.UserId, gamePassId)
+	end)
+	
+	if hasPass == true then
+		return true
+	else
+		return false
+	end
+end
+
+function Bolt.MoveCamera(CFrame)
+	camera.CFrame = CFrame
 end
 
 return Bolt
