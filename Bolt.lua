@@ -11,6 +11,8 @@ local Bolt = {
 	["Premium"] = require(script.Premium),
 	["Stats"] = require(script.Stats),
 	["Marketplace"] = require(script.Marketplace),
+	["Datastores"] = require(script.Datastores),
+	["Studify"] = require(script.Studify)
 }
 
 
