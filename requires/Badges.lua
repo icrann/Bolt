@@ -1,9 +1,9 @@
 local Badges = {}
 
-local badges = game:GetService("BadgeService")
+local BadgeService = game:GetService("BadgeService")
 
-function Badges.AwardBadge(playerId, badgeId)
-	badges:AwardBadge(playerId, badgeId)
+function Badges.Award(playerId, badgeId)
+	BadgeService:AwardBadge(playerId, badgeId)
 end
 
 return Badges

@@ -4,11 +4,11 @@ function Health.Kill(player)
 	player.Character:WaitForChild("Humanoid").Health = 0
 end
 
-function Health.RemoveHealth(player, health)
+function Health.Remove(player, health)
 	player.Character:WaitForChild("Humanoid").Health = (player.Character:WaitForChild("Humanoid").Health - health)
 end
 
-function Health.AddHealth(player, health)
+function Health.Add(player, health)
 	player.Character:WaitForChild("Humanoid").Health = (player.Character:WaitForChild("Humanoid").Health + health)
 end
 

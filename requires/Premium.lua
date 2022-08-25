@@ -1,9 +1,9 @@
 local Premium = {}
 
-local marketplace = game:GetService("MarketplaceService")
+local MarketplaceService = game:GetService("MarketplaceService")
 
 function Premium.PromptPremium(player)
-	marketplace:PromptPremiumPurchase(player)
+	MarketplaceService:PromptPremiumPurchase(player)
 end
 
 return Premium

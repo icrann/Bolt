@@ -1,6 +1,6 @@
 local Actions = {}
 
-function Actions.ChangeSpeed(player, speed)
+function Actions.Speed(player, speed)
 	player.Character:WaitForChild("Humanoid").WalkSpeed = speed
 end
 

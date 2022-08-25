@@ -1,6 +1,6 @@
 local Teams = {}
 
-function Teams:ChangeTeam(player, team)
+function Teams:Change(player, team)
 	player.Team = team
 end
 

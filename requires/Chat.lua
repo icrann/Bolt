@@ -1,6 +1,6 @@
 local Chat = {}
 
-local chat = game:GetService("Chat")
+local ChatService = game:GetService("Chat")
 
 function Chat.DarkBubbleChat()
 	local BubbleChatSettings = {
@@ -8,7 +8,7 @@ function Chat.DarkBubbleChat()
 		TextColor3 = Color3.fromRGB(255, 255, 255)
 	}
 
-	chat:SetBubbleChatSettings(BubbleChatSettings)
+	ChatService:SetBubbleChatSettings(BubbleChatSettings)
 end
 
 function Chat.LightBubbleChat()
@@ -17,7 +17,7 @@ function Chat.LightBubbleChat()
 		TextColor3 = Color3.fromRGB(0, 0, 0)
 	}
 
-	chat:SetBubbleChatSettings(BubbleChatSettings)
+	ChatService:SetBubbleChatSettings(BubbleChatSettings)
 end
 
 return Chat
