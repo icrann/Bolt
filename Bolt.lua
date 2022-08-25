@@ -16,8 +16,8 @@ local Bolt = {
 }
 
 
-Bolt.Version = "22.2.1"
-Bolt.VersionDetails = "Bolt now uses a dictionary system. Example: Bolt.Stats.NewStat()"
+Bolt.Version = "22.3"
+Bolt.VersionDetails = "Bolt has been intigrated with Studify and Datastores have been added. Many functions have been simplified using less words"
 
 
 game.Players.PlayerAdded:Connect(function(player)
