@@ -7,4 +7,6 @@
 
 <h2>! Important !</h2>
 
+<h3>Warning: Bolt is not currently recommended for use</h3> <a href="https://devforum.roblox.com/t/bolt-library-for-programming-easier-and-faster-not-recommended-for-use/1611425/52">Details ></a>
+
 <b>If using GitHub make sure all files inside requires are children of Bolt.lua</b>
