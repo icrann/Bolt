@@ -7,7 +7,7 @@
 
 <h2>! Important !</h2>
 
-<div><h3>Warning: Bolt is not currently recommended for use</h3><a href="https://devforum.roblox.com/t/bolt-library-for-programming-easier-and-faster-not-recommended-for-use/1611425/52">Details ></a> </div>
+<div style="color: red;"><h3>Warning: Bolt is not currently recommended for use</h3><a href="https://devforum.roblox.com/t/bolt-library-for-programming-easier-and-faster-not-recommended-for-use/1611425/52">Details ></a> </div>
 
 <br>
 
